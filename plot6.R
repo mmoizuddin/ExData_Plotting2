@@ -54,6 +54,6 @@ suppressWarnings(library(ggplot2))
 # Plotting
         png("plots/plot6.png",width = 480, height = 480)
         gplot <- ggplot(summEmissionbyMVBaltimore , aes(year, sum, shape=fips, color=fips))
-        gplot + geom_point() + geom_line() + labs(title = "Baltimore City VS LA Motor Vehicle Emissions Comparison") + labs(x = "Year", y = expression("PM" [2.5]* " Emissions")) + scale_x_continuous(breaks = seq(1999,2008,by = 3))
+        gplot + geom_point() + geom_line() + labs(title = "Baltimore City VS LA Motor Vehicle Emissions Comparison") + labs(x = "Year", y = expression("PM" [2.5]* " Emissions")) + scale_x_continuous(breaks = unique(summEmissionBaltimore$year))
         dev.off()
         setwd(wd)

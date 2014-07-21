@@ -53,7 +53,7 @@ suppressWarnings(library(plyr))
 # Plotting
         png("plots/plot2.png",width = 480, height = 480)
         with(summEmissionBaltimore,plot(year,sum, type = "b", xlab="Year", ylab = expression("PM"[2.5]), main = "Emissions in Baltimore City, Maryland",axes=FALSE))
-        axis(side = 1, at = c("1999","2002","2005","2008"))
+        axis(side = 1, at = unique(Baltimore$year))
         box()
         axis(2)
         dev.off()
